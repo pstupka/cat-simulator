@@ -62,7 +62,6 @@ jobs:
       - name: Zip Folder
         run: zip -r itch.zip ${{ env.EXPORT_FOLDER }}/build/windows
       - name: Deploy to itch.io
-        if: ${{ env.ITCH_IO == true }}
         uses: josephbmanley/butler-publish-itchio-action@master
         env:
           BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
