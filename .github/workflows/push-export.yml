@@ -6,7 +6,7 @@ on:
       - staging
 env:
   GODOT_VERSION: 3.4.4
-  EXPORT_NAME: godot-game-template
+  EXPORT_NAME: cat-simulator
   ITCH_IO: ${{ true }} #set to true if you want to enable automatic itch.io deploy
 
 jobs:
