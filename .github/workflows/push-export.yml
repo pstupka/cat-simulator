@@ -12,7 +12,7 @@ env:
 
 jobs:
   export-windows:
-    if: ${{env.ITCH_IO==true}}
+    if: ${{ env.ITCH_IO==true }}
     name: Windows Export
     runs-on: ubuntu-20.04
     container:
