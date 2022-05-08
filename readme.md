@@ -5,9 +5,9 @@
   <img alt="Godot Download badge" src="https://img.shields.io/badge/godot-3.4.4-blue">
 </a>
 
-<!-- <a href="https://github.com/pstupka/cat-simulator/releases">
-  <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/crystal-bit/godot-game-template">
-</a> -->
+<a href="https://github.com/pstupka/cat-simulator/releases">
+  <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/pstupka/cat-simulator">
+</a>
 
 <!-- <a href="https://github.com/crystal-bit/godot-game-template/actions?query=workflow%3A%22godot-ci+export%22">
   <img alt="GitHub workflow status" src="https://img.shields.io/github/workflow/status/crystal-bit/godot-game-template/godot-ci%20export?label=game-export">
