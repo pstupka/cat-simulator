@@ -3,6 +3,9 @@
 
 # Godot-specific ignores
 .import/
+*.import
+export.cfg
+export_presets.cfg
 
 # Builds/export directory
 builds
@@ -12,3 +15,9 @@ builds
 
 # OSX 
 .DS_Store
+
+# Binary files folder
+bin/
+
+# Other 
+tmp/
