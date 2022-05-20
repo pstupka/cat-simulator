@@ -11,7 +11,11 @@ func _ready():
 
 
 func _on_PlayButton_pressed() -> void:
-	Game.change_scene("res://scenes/gameplay/playground.tscn")
+	var params = {
+		show_progress_bar = true,
+	}
+	
+	Game.change_scene("res://scenes/gameplay/playground.tscn", params)
 
 
 func _on_ExitButton_pressed() -> void:

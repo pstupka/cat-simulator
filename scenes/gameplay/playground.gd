@@ -2,6 +2,10 @@ extends Node
 
 var elapsed = 0
 
+func _ready() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+
 # `pre_start()` is called when a scene is loaded.
 # Use this function to receive params from `Game.change_scene(params)`.
 func pre_start(params):
@@ -23,5 +27,5 @@ func start():
 	print("gameplay.gd: start() called")
 
 
-func _process(delta):
+func _process(_delta):
 	pass
