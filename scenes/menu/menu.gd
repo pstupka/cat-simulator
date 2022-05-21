@@ -9,6 +9,8 @@ func _ready():
 	if OS.has_feature('HTML5'):
 		$VBoxContainer/ExitButton.queue_free()
 
+	Game.game_state = Globals.GAME_STATE.MAIN_MENU
+
 
 func _on_PlayButton_pressed() -> void:
 	var params = {

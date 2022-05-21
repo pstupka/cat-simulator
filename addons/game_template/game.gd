@@ -2,6 +2,7 @@
 # Eg: `Game.change_scene("res://scenes/gameplay/gameplay.tscn)`
 extends Node
 
+#var camera_transform : Transform
 
 onready var transitions = get_node_or_null("/root/Transitions")
 
@@ -10,6 +11,7 @@ var prevent_input_on_transitions = true
 var scenes: Scenes
 var size: Vector2
 
+var game_state : int = 0 setget set_game_state
 
 func _enter_tree() -> void:
 	pause_mode = Node.PAUSE_MODE_PROCESS # needed to make "prevent_input_on_transitions" work even if the game is paused
@@ -25,6 +27,9 @@ func _ready() -> void:
 	scenes = preload("res://addons/game_template/scenes.gd").new()
 	scenes.name = "Scenes"
 	get_node("/root/").call_deferred("add_child", scenes)
+	
+	GameSettingsManager.load_save_game()
+	GameSettingsManager.load_settings()
 
 
 func _on_screen_resized():
@@ -65,6 +70,16 @@ func _input(_event: InputEvent):
 		get_tree().set_input_as_handled()
 
 
+func set_game_state(state) -> void:
+	var game_state_keys = Globals.GAME_STATE.keys()
+	print(	"Game State change: ",
+			game_state_keys[game_state],
+			" -> ",
+			game_state_keys[state])
+	game_state = state
+	
+
+
 func _on_Transitions_transition_started(anim_name):
 	if pause_scenes_on_transitions:
 		get_tree().paused = true
@@ -74,13 +89,14 @@ func _on_Transitions_transition_finished(anim_name):
 	if pause_scenes_on_transitions:
 		get_tree().paused = false
 
-
+# Might be deprecated. Not used anywhere
 func add_script(script_name, self_prop_name, script_path):
 	var new_script: Node = load(script_path).new()
 	new_script.name = script_name
 	call_deferred("add_script_node", new_script, self_prop_name)
 
-
+# Might be deprecated. Not used anywhere
 func add_script_node(new_node, prop_name):
 	get_tree().root.add_child(new_node)
 	self[prop_name] = new_node
+

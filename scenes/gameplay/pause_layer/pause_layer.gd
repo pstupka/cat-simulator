@@ -33,12 +33,16 @@ func _unhandled_input(event):
 func resume():
 	get_tree().paused = false
 	pause.hide()
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	Game.game_state = Globals.GAME_STATE.IN_GAME
 
 
 func pause_game():
 	resume_option.grab_focus()
 	get_tree().paused = true
 	pause.show()
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	Game.game_state = Globals.GAME_STATE.PAUSE
 
 
 func _on_Resume_pressed():

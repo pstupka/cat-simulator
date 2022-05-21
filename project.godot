@@ -9,6 +9,21 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Resource",
+"class": "GameSave",
+"language": "GDScript",
+"path": "res://addons/game_template/resources/game_save_res.gd"
+}, {
+"base": "Resource",
+"class": "GameSettings",
+"language": "GDScript",
+"path": "res://addons/game_template/resources/game_settings_res.gd"
+}, {
+"base": "Node",
+"class": "Globals",
+"language": "GDScript",
+"path": "res://addons/game_template/globals.gd"
+}, {
 "base": "KinematicBody",
 "class": "MovementController",
 "language": "GDScript",
@@ -30,6 +45,9 @@ _global_script_classes=[ {
 "path": "res://addons/game_template/transition/transition.gd"
 } ]
 _global_script_class_icons={
+"GameSave": "",
+"GameSettings": "",
+"Globals": "",
 "MovementController": "",
 "SceneData": "",
 "Scenes": "",
@@ -47,9 +65,11 @@ config/version="0.0.1"
 
 [autoload]
 
-Game="*res://addons/game_template/game.gd"
-Transitions="*res://addons/game_template/transition/transition.tscn"
 Utils="*res://addons/game_template/utils.gd"
+Transitions="*res://addons/game_template/transition/transition.tscn"
+Game="*res://addons/game_template/game.gd"
+SignalBus="*res://addons/game_template/game_managers/signal_bus.gd"
+GameSettingsManager="*res://addons/game_template/game_managers/game_settings_manager.gd"
 
 [category]
 

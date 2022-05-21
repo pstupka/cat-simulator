@@ -4,6 +4,7 @@ var elapsed = 0
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	Game.game_state = Globals.GAME_STATE.IN_GAME
 
 
 # `pre_start()` is called when a scene is loaded.
@@ -11,7 +12,7 @@ func _ready() -> void:
 func pre_start(params):
 	var cur_scene: Node = get_tree().current_scene
 	print("Current scene is: ", cur_scene.name, " (", cur_scene.filename, ")")
-	print("gameplay.gd: pre_start() called with params = ")
+	print("playground.gd: pre_start() called with params = ")
 	if params:
 		for key in params:
 			var val = params[key]
@@ -24,7 +25,7 @@ func pre_start(params):
 
 # `start()` is called when the graphic transition ends.
 func start():
-	print("gameplay.gd: start() called")
+	print("playground.gd: start() called")
 
 
 func _process(_delta):
