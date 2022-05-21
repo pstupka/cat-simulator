@@ -17,17 +17,17 @@ _global_script_classes=[ {
 "base": "Reference",
 "class": "SceneData",
 "language": "GDScript",
-"path": "res://addons/game-template/scenes/scene-data.gd"
+"path": "res://addons/game_template/scenes/scene_data.gd"
 }, {
 "base": "Node",
 "class": "Scenes",
 "language": "GDScript",
-"path": "res://addons/game-template/scenes.gd"
+"path": "res://addons/game_template/scenes.gd"
 }, {
 "base": "CanvasLayer",
 "class": "Transition",
 "language": "GDScript",
-"path": "res://addons/game-template/transition/transition.gd"
+"path": "res://addons/game_template/transition/transition.gd"
 } ]
 _global_script_class_icons={
 "MovementController": "",
@@ -47,9 +47,9 @@ config/version="0.0.1"
 
 [autoload]
 
-Game="*res://addons/game-template/game.gd"
-Transitions="*res://addons/game-template/transition/transition.tscn"
-Utils="*res://addons/game-template/utils.gd"
+Game="*res://addons/game_template/game.gd"
+Transitions="*res://addons/game_template/transition/transition.tscn"
+Utils="*res://addons/game_template/utils.gd"
 
 [category]
 
@@ -63,7 +63,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/game-template/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/game_template/plugin.cfg" )
 
 [input]
 

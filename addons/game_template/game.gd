@@ -22,7 +22,7 @@ func _enter_tree() -> void:
 
 
 func _ready() -> void:
-	scenes = preload("res://addons/game-template/scenes.gd").new()
+	scenes = preload("res://addons/game_template/scenes.gd").new()
 	scenes.name = "Scenes"
 	get_node("/root/").call_deferred("add_child", scenes)
 

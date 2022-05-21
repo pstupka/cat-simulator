@@ -15,11 +15,11 @@ signal change_finished
 const MINIMUM_TRANSITION_DURATION = 300 # ms
 
 onready var transitions: Transition = get_node_or_null("/root/Transitions")
-onready var _history = preload("res://addons/game-template/scenes/scenes-history.gd").new()
+onready var _history = preload("res://addons/game_template/scenes/scenes_history.gd").new()
 onready var _loader_ri = \
-  preload("res://addons/game-template/scenes/resource_interactive_loader.gd").new()
+  preload("res://addons/game_template/scenes/resource_interactive_loader.gd").new()
 onready var _loader_mt = \
-  preload("res://addons/game-template/scenes/resource_multithread_loader.gd").new()
+  preload("res://addons/game_template/scenes/resource_multithread_loader.gd").new()
 
 # params caching
 var _params = {}
