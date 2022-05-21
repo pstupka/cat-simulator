@@ -9,19 +9,15 @@ func _ready():
 	if OS.has_feature('HTML5'):
 		$VBoxContainer/ExitButton.queue_free()
 
+	Game.game_state = Globals.GAME_STATE.MAIN_MENU
+
 
 func _on_PlayButton_pressed() -> void:
 	var params = {
 		show_progress_bar = true,
-		"a_number": 10,
-		"a_string": "Ciao mamma!",
-		"an_array": [1, 2, 3, 4],
-		"a_dict": {
-			"name": "test",
-			"val": 15
-		},
 	}
-	Game.change_scene("res://scenes/gameplay/gameplay.tscn", params)
+	
+	Game.change_scene("res://scenes/gameplay/playground.tscn", params)
 
 
 func _on_ExitButton_pressed() -> void:
