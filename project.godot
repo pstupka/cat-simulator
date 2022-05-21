@@ -83,7 +83,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/game_template/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/game_template/plugin.cfg", "res://addons/smoothing/plugin.cfg" )
 
 [input]
 
