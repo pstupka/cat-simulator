@@ -1,11 +1,14 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/gameplay/playground.gd" type="Script" id=1]
 [ext_resource path="res://addons/fps_controller/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/gameplay/pause_layer/pause_layer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/textures/patterns/pattern59.png" type="Texture" id=4]
 
 [sub_resource type="SpatialMaterial" id=1]
-albedo_color = Color( 0.317647, 0.741176, 0.145098, 1 )
+albedo_color = Color( 0.580392, 0.231373, 0, 1 )
+albedo_texture = ExtResource( 4 )
+uv1_scale = Vector3( 100, 100, 1 )
 
 [sub_resource type="CubeMesh" id=2]
 material = SubResource( 1 )
@@ -30,6 +33,7 @@ script = ExtResource( 1 )
 [node name="PauseLayer" parent="." instance=ExtResource( 3 )]
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.28704, 0 )
 mesh = SubResource( 2 )
 material/0 = null
 
@@ -42,4 +46,4 @@ shape = SubResource( 5 )
 environment = SubResource( 4 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.64996, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.40263, 0.813172, 2.96395 )

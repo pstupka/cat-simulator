@@ -47,19 +47,19 @@ func connect_signals() -> void:
 	SignalBus.connect("revert_camera_target", self, "on_revert_camera_target")
 	SignalBus.connect("set_camera_fov", self, "on_set_camera_fov")
 	SignalBus.connect("add_camera_collision_exception", self, "on_add_camera_collision_exception")
-	SignalBus.connect("clear_camera_collision_excpetions", self, "on_clear_camera_collision_excpetions")
+	SignalBus.connect("clear_camera_collision_exceptions", self, "on_clear_camera_collision_exceptions")
 	SignalBus.connect("change_mouse_sensitivity", self, "on_change_mouse_sensitivity")
 	SignalBus.connect("settings_changed", self, "on_settings_changed")
 	
 	
 func apply_settings() -> void:
 	# fov
-	$PivotY/PivotX/ClippedCamera.fov = GameManager.game_settings.fov
-	def_fov = GameManager.game_save.fov
+	$PivotY/PivotX/ClippedCamera.fov = GameSettingsManager.game_settings.fov
+	def_fov = GameSettingsManager.game_save.fov
 	# mouse sensitvity
-	mouse_sensitivity = GameManager.game_save.mouse_sensitivity
+	mouse_sensitivity = GameSettingsManager.game_save.mouse_sensitivity
 	# mouse smooth
-	mouse_smooth_amount = MAX_SMOOTH - ((GameManager.game_save.mouse_smooth - 0.05) * MAX_SMOOTH)
+	mouse_smooth_amount = MAX_SMOOTH - ((GameSettingsManager.game_save.mouse_smooth - 0.05) * MAX_SMOOTH)
 
 
 func _input(event: InputEvent) -> void:
@@ -72,9 +72,9 @@ func _process(delta: float) -> void:
 	interpolate_inputs(delta)
 	rotate_cam(delta)
 	
-	GameManager.camera_transform = camera.global_transform
-	GameManager.camera_x_rot = pivot_y.rotation.y
-	GameManager.camera_y_rot = pivot_x.rotation.x
+	Game.camera_transform = camera.global_transform
+	Game.camera_x_rot = pivot_y.rotation.y
+	Game.camera_y_rot = pivot_x.rotation.x
 	
 	
 func _physics_process(delta: float) -> void:
@@ -141,7 +141,7 @@ func on_add_camera_collision_exception(_n : Node) -> void:
 	camera.add_exception(_n)
 
 
-func on_clear_camera_collision_excpetions() -> void:
+func on_clear_camera_collision_exceptions() -> void:
 	camera.clear_exceptions()
 
 

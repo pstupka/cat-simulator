@@ -70,6 +70,7 @@ Transitions="*res://addons/game_template/transition/transition.tscn"
 Game="*res://addons/game_template/game.gd"
 SignalBus="*res://addons/game_template/game_managers/signal_bus.gd"
 GameSettingsManager="*res://addons/game_template/game_managers/game_settings_manager.gd"
+AudioManager="*res://addons/game_template/game_managers/audio_manager.gd"
 
 [category]
 

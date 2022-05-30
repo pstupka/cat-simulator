@@ -2,7 +2,9 @@
 # Eg: `Game.change_scene("res://scenes/gameplay/gameplay.tscn)`
 extends Node
 
-#var camera_transform : Transform
+var camera_transform : Transform
+var camera_x_rot : float
+var camera_y_rot : float 
 
 onready var transitions = get_node_or_null("/root/Transitions")
 
